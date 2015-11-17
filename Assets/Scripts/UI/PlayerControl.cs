@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
     // Note:    Max slope traction angle 22'degrees
     //          Player angle 21.33065 -> 100% traction
 
-    private float moveValue = .02f;
+    private float moveValue = .2f;
 
     public void Awake()
     {

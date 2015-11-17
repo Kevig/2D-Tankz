@@ -13,6 +13,7 @@ public class UIAngleAdjust : MonoBehaviour
 
     public void Update()
     {
-        this.transform.eulerAngles = new Vector3(0f, 0f, this.player.eulerAngles.z);
+        Vector3 rot = this.transform.eulerAngles;
+        this.transform.eulerAngles = new Vector3(rot.x, rot.y, this.player.eulerAngles.z);
     }
 }

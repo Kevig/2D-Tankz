@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\UI\UIGunAngle.cs" />
      <Compile Include="Assets\Scripts\UI\UIGunRotationControl.cs" />
      <Compile Include="Assets\Scripts\UI\UIPositionTracking.cs" />
+     <Compile Include="Assets\Scripts\UI\UtilZeroZClamp.cs" />
      <Compile Include="Assets\Scripts\Utility\ClickTrack.cs" />
      <Compile Include="Assets\Scripts\Utility\CursorUtility.cs" />
      <Compile Include="Assets\Scripts\Utility\Utility.cs" />
