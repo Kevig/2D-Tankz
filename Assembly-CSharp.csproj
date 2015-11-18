@@ -47,12 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\UI\ArrowAnimate.cs" />
-     <Compile Include="Assets\Scripts\UI\MoveArrowControl.cs" />
      <Compile Include="Assets\Scripts\UI\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\UI\PlayerGUICore.cs" />
      <Compile Include="Assets\Scripts\UI\UIAngleAdjust.cs" />
      <Compile Include="Assets\Scripts\UI\UIAngleClamp.cs" />
      <Compile Include="Assets\Scripts\UI\UIGunAngle.cs" />
+     <Compile Include="Assets\Scripts\UI\UIGunFireControl.cs" />
      <Compile Include="Assets\Scripts\UI\UIGunRotationControl.cs" />
      <Compile Include="Assets\Scripts\UI\UIPositionTracking.cs" />
      <Compile Include="Assets\Scripts\UI\UtilZeroZClamp.cs" />

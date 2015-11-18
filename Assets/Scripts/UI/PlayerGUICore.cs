@@ -21,6 +21,7 @@ public class PlayerGUICore : MonoBehaviour
     public bool gunRotationLock;
     public bool moveLeft;
     public bool moveRight;
+    public bool fireButton;
 
     public void Awake()
     {
@@ -38,6 +39,7 @@ public class PlayerGUICore : MonoBehaviour
         this.gunRotationLock = true;
         this.moveLeft = false;
         this.moveRight = false;
+        this.fireButton = false;
     }
 
     // Returns rotation lock
@@ -46,10 +48,17 @@ public class PlayerGUICore : MonoBehaviour
         return this.gunRotationLock;
     }
 
+    // Returns fire button state
+    public bool getFireBtnState()
+    {
+        return this.fireButton;
+    }
+
     // Tracks clicks / activation of UI Gameobjects, receives gameobject reference
     public void onClick(GameObject anObj)
     {
         string objName = anObj.name;
+        bool hideCursor = false;
 
         // Switch state using gameObject names as trigger
         switch(objName)
@@ -57,22 +66,34 @@ public class PlayerGUICore : MonoBehaviour
             // Crosshair activation unlocks gun rotation
             case "UICrossHair":
                 gunRotationLock = false;
+                hideCursor = true;
                 break;
             
             // Left move arrow allows player movement 
             case "ArrowLeft":
                 this.moveLeft = true;
                 this.moveLeftArrow.animateScale();
+                hideCursor = true;
                 break;
 
             // Right move arrow allows player movement 
             case "ArrowRight":
                 this.moveRight = true;
                 this.moveRightArrow.animateScale();
+                hideCursor = true;
+                break;
+
+            case "RedButton":
+                this.fireButton = true;
+                hideCursor = false;
                 break;
         }
-        // Cursor utility class -> lock n hide
-        CursorUtility.toggleCursorLock(true);
+
+        if(hideCursor)
+        {
+            // Cursor utility class -> lock n hide
+            CursorUtility.toggleCursorLock(true);
+        }
     }
 
     // Removes, reverts all locks / bools and reverts any animated elements
@@ -81,6 +102,7 @@ public class PlayerGUICore : MonoBehaviour
         this.gunRotationLock = true;
         this.moveLeft = false;
         this.moveRight = false;
+        this.fireButton = false;
 
         this.moveLeftArrow.revertScale();
         this.moveRightArrow.revertScale();

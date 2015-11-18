@@ -13,7 +13,7 @@ public static class CursorUtility
         else
         {
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.visible = true;           
         }
     }
 }
